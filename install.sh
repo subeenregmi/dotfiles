@@ -17,6 +17,17 @@ function install_configs()
     cp ./gruvbox.vim ~/.vim/colors/gruvbox.vim
     printf "Vim config has been installed!\n"
     printf "Make sure you run :PlugInstall in your next vim session!\n"
+    
+    printf "Configuring zsh as default bash environment...\n"
+    if command -v chsh &> /dev/null; then
+        sudo chsh -s $(which zsh)
+        printf "zsh has been configured!\n"
+    elif command -v lchsh &> /dev/null; then
+        sudo lchsh $USER 
+        printf "zsh has been configured!\n" 
+    else
+        printf "zsh could not be configured! :("
+    fi
 }
 
 function get_installed()
