@@ -5,6 +5,8 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set background=dark
+
 
 call plug#begin('~/.vim/plugged')
 
@@ -13,9 +15,9 @@ Plug 'dense-analysis/ale'
 
 call plug#end()
 " 'python':['pydocstyle', 'bandit', 'mypy', 'flake8'], 
-"let g:ale_linters = {'*':[],'python':['pylint'], 'cpp':['clang-tidy', 'cpplint', 'cc'], 'c':['cc']}
-"let ale_lint_delay=0
-"let g:ale_python_pylint_options = '--rcfile ~/Downloads/pylintrc'
-"let g:ale_fixers  = {'python':['black', 'isort']}
-"let g:ale_fix_on_save = 1
+let g:ale_linters = {'*':[],'python':['pylint'], 'cpp':['clang-tidy', 'cpplint', 'cc'], 'c':['cc']}
+let ale_lint_delay=0
+let g:ale_python_pylint_options = '--rcfile ~/Downloads/pylintrc'
+let g:ale_fixers  = {'python':['black', 'isort']}
+let g:ale_fix_on_save = 1
 

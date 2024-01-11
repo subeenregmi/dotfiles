@@ -1,4 +1,4 @@
-pograms=(curl vim git)
+programs=(zsh curl vim git)
 installed_programs=()
 needed_programs=()
 package_manager=()
@@ -30,22 +30,49 @@ function get_installed()
     done
 }
 
+function install_programs()
+{
+    for program in $@; do
+        printf "Installing $program...\n"
+        if sudo $package_manager install $program; then
+            printf "Installed $program successfully!\n"
+        else
+            printf "Failed to install $program. :(\n"
+        fi
+    done
+}
+
 function install_menu()
 {
     get_installed
     printf "\nAlready installed programs:\n"
+
     for program in ${installed_programs[@]}; do
         printf "    ■ $program\n"
     done
+
     if [ ${#needed_programs[@]} -eq 0 ]; then
         printf "No programs needed to be installed!\n"
+
     else
         printf "Programs that needed to be installed:\n"
+
         for program in ${needed_programs[@]}; do
             printf "    ■ $program\n"
         done
+
+        printf "\nStart program installation? (Y \ N)\n"
+        printf "installer> "
+        read option
+        
+        case $option in
+            Y) install_programs ${needed_programs[@]};;
+            y) install_programs ${needed_programs[@]};;
+            *) echo "Exiting...";; 
+        esac
     fi
-    printf "\nStart installation? (Y \ N)\n"
+
+    printf "\nStart config installation? (Y \ N)\n"
     printf "installer> "
     read option
     
@@ -54,8 +81,8 @@ function install_menu()
         y) install_configs;;
         *) echo "Exiting...";; 
     esac
-    
-    
+
+
 }
 
 function get_os()
