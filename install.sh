@@ -20,7 +20,7 @@ function install_configs()
     
     printf "Configuring zsh as default bash environment...\n"
     if command -v chsh &> /dev/null; then
-        sudo chsh -s $(which zsh)
+        chsh -s $(which zsh)
         printf "zsh has been configured!\n"
     elif command -v lchsh &> /dev/null; then
         sudo lchsh $USER 
