@@ -1,7 +1,3 @@
-programs=(zsh curl vim git)
-installed_programs=()
-needed_programs=()
-package_manager=()
 os=$(uname -s)
 
 function install_configs()
@@ -17,72 +13,21 @@ function install_configs()
     cp ./gruvbox.vim ~/.vim/colors/gruvbox.vim
     printf "Vim config has been installed!\n"
     printf "Make sure you run :PlugInstall in your next vim session!\n"
+    printf "Installing linters...\n"
+    pip install pylint
+    printf "Installed linters...\n"
+    printf "Installing zsh theme...\n"
+    cp ./heapbytes.zsh-theme ~/.oh-my-zsh/themes/
+    sed -i 's/ZSH_THEME=*/ZSH_THEME="heapbytes"/' ~/.zshrc
+    printf "Installed zsh theme\n"
+
+    printf "Done!\n"
     
-    printf "Configuring zsh as default bash environment...\n"
-    if command -v chsh &> /dev/null; then
-        chsh -s $(which zsh)
-        printf "zsh has been configured!\n"
-    elif command -v lchsh &> /dev/null; then
-        sudo lchsh $USER 
-        printf "zsh has been configured!\n" 
-    else
-        printf "zsh could not be configured! :("
-    fi
 }
 
-function get_installed()
-{
-    for program in ${programs[@]}; do
-        if command -v $program &> /dev/null; then
-            installed_programs+=($program)
-        else
-            needed_programs+=($program)
-        fi
-    done
-}
-
-function install_programs()
-{
-    for program in $@; do
-        printf "Installing $program...\n"
-        if sudo $package_manager install $program; then
-            printf "Installed $program successfully!\n"
-        else
-            printf "Failed to install $program. :(\n"
-        fi
-    done
-}
 
 function install_menu()
 {
-    get_installed
-    printf "\nAlready installed programs:\n"
-
-    for program in ${installed_programs[@]}; do
-        printf "    ■ $program\n"
-    done
-
-    if [ ${#needed_programs[@]} -eq 0 ]; then
-        printf "No programs needed to be installed!\n"
-
-    else
-        printf "Programs that needed to be installed:\n"
-
-        for program in ${needed_programs[@]}; do
-            printf "    ■ $program\n"
-        done
-
-        printf "\nStart program installation? (Y \ N)\n"
-        printf "installer> "
-        read option
-        
-        case $option in
-            Y) install_programs ${needed_programs[@]};;
-            y) install_programs ${needed_programs[@]};;
-            *) echo "Exiting...";; 
-        esac
-    fi
-
     printf "\nStart config installation? (Y \ N)\n"
     printf "installer> "
     read option
@@ -125,7 +70,6 @@ function get_package_manager()
 function menu() 
 {
     get_os
-    get_package_manager
     printf "
 
     ░██████╗██╗░░░██╗██████╗░███████╗███████╗███╗░░██╗██╗░██████╗
