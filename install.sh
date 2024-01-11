@@ -1,4 +1,4 @@
-programs=(curl vim git)
+pograms=(curl vim git)
 installed_programs=()
 needed_programs=()
 package_manager=()
@@ -13,6 +13,7 @@ function install_configs()
     mv ~/.vimrc ~/.vimrc.backup
     printf "Installing new vim config...\n"
     cp ./.vimrc ~/.vimrc
+    mkdir -p ~/.vim/colors/
     cp ./gruvbox.vim ~/.vim/colors/gruvbox.vim
     printf "Vim config has been installed!\n"
     printf "Make sure you run :PlugInstall in your next vim session!\n"
