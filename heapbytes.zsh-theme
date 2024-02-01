@@ -9,6 +9,8 @@ get_ip_address() {
     echo "%{$fg[green]%}$(ifconfig en0 | awk '/inet / {print $2}')%{$reset_color%}"
   elif [[ -n "$(ifconfig wlan0 2>/dev/null)" ]]; then
     echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}')%{$reset_color%}"
+  elif [[ -n "$(ip addr show wlan0 2>/dev/null)" ]]; then
+    echo "%{$fg[green]%}$(ip addr show wlan0 | awk '/inet / {print $2} | head -1')%{$reset_color%}"
   else
     echo "%{$fg[red]%}No IP%{$reset_color%}"
   fi
