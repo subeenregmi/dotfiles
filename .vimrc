@@ -1,4 +1,4 @@
-set number relativenumber
+set relativenumber
 syntax on
 set smartindent
 set tabstop=4
@@ -18,24 +18,23 @@ colorscheme tokyonight
 
 call plug#begin('~/.vim/plugged')
 
-" https://github.com/dense-analysis/ale
-Plug 'dense-analysis/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'sheerun/vim-polyglot'
 
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
-" 'python':['pydocstyle', 'bandit', 'mypy', 'flake8'], 
-let g:ale_linters = {'*':[],'python':['pydocstyle', 'bandit', 'mypy', 'flake8'], 'cpp':[], 'c':[], 'asm':[]}
-let ale_lint_delay=0
-let g:ale_fixers  = {'python':['black', 'isort']}
-let g:ale_fix_on_save = 1
-let g:deoplete#sources#jedi#show_docstring = 1
 
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+endfunction
+
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
