@@ -1,27 +1,35 @@
 set relativenumber
 syntax on
-set smartindent
+set smartindent 
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set expandtab 
 set background=dark
 set termguicolors
 set nocompatible
 set encoding=UTF-8
+set re=0
+
+set regexpengine=0
+syntax on
+filetype plugin indent on
+
 
 " hack?
 
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 0
 let g:tokyonight_transparent_background = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='deus'
 
-
 colorscheme tokyonight
 
+
 call plug#begin('~/.vim/plugged')
+
+Plug 'catppuccin/vim', { 'as': 'catppuccin'  }
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -48,9 +56,18 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'dense-analysis/ale'
 
+Plug 'psliwka/vim-smoothie'
+
+Plug 'ianks/vim-tsx'
+
+Plug 'yggdroot/indentline'
+
+Plug 'vim-scripts/loremipsum'
+
 call plug#end()
 
 highlight ALEVirtualTextError guifg=#ff007c
+
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -81,6 +98,27 @@ augroup lsp_install
 augroup END
 
 let g:lsp_diagnostics_enabled = 0
-let g:lsp_settings_root_markers = []
 
-let b:ale_linters = {'c': ['clangd']}
+let b:ale_linters = {'c': ['clangd'], 'asm':[''], 'typescript':['eslint']}
+
+
+autocmd BufRead,BufNewFile *.tsx set filetype=typescriptreact
+
+
+" Toggle cursor highlighting with hc (in normal mode)
+nnoremap hc :call ToggleCursorHighlight()<CR>
+
+function! ToggleCursorHighlight()
+    if &cursorline && &cursorcolumn
+        set nocursorline
+        set nocursorcolumn
+        echo "Cursor highlighting OFF"
+    else
+        set cursorline
+        set cursorcolumn
+
+        highlight CursorLine ctermbg=236 guibg=#333322
+        highlight CursorColumn ctermbg=236 guibg=#333322
+        echo "Cursor highlighting ON"
+    endif
+endfunction

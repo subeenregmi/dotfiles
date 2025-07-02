@@ -1,20 +1,21 @@
+export CLICOLOR=1
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="hedgehog"
 
 # Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME="heapbytes""heapbytes"random will cause zsh to load
+# Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME="heapbytes""heapbytes"_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,21 +86,49 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/home/subeen/Downloads/idea-IU-233.14475.28/bin:$PATH"
-alias open="xdg-open"
-alias mde="nohup ~/Downloads/marktext-x86_64.AppImage &>/dev/null"
-alias airpod="bluetoothctl connect 2C:76:00:D7:1E:36"
+
+[ -f "/Users/subeenregmi/.ghcup/env" ] && . "/Users/subeenregmi/.ghcup/env" # ghcup-env
+
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/subeenregmi/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# sparklayer
+export PATH="/usr/local/share/google-cloud-sdk/bin:$PATH"
+
+alias db-spark-dev="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-main-db-instance2 --port 3309"
+alias db-spark-dev-core="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-core --port 5433"
+alias db-spark-dev-spark="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-dash-api --port 3312"
+
+echo 'export PATH="/usr/local/opt/mysql/bin:$PATH"' >> ~/.zshrc
+export PATH="/usr/local/opt/mysql/bin:$PATH"
+export PATH="/usr/local/opt/mysql/bin:$PATH"
+export PATH="/usr/local/opt/mysql/bin:$PATH"
