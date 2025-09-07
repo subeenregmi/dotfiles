@@ -8,3 +8,4 @@ ln -sr nvim $HOME/.config/nvim
 ln -sr tmux $HOME/.config/tmux
 ln -sr zsh $HOME/.config/zsh
 ln -sr zsh/.zshenv $HOME
+ln -sr fonts $HOME/.local/share/fonts
