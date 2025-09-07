@@ -1,0 +1,88 @@
+# Nord Midnight Theme for Alacritty
+# Based on VS Code Nord Midnight theme
+
+colors:
+  # Default colors
+  primary:
+    background: '#1a1d23'  # editor.background
+    foreground: '#d8dee9'  # editor.foreground
+    
+    # Bright and dim foreground colors (optional)
+    dim_foreground: '#d8dee999'
+    bright_foreground: '#eceff4'
+
+  # Cursor colors
+  cursor:
+    text: '#1a1d23'
+    cursor: '#bf616a'  # terminalCursor.foreground
+
+  # Vi mode cursor colors (optional)
+  vi_mode_cursor:
+    text: '#1a1d23'
+    cursor: '#81a1c1'
+
+  # Search colors
+  search:
+    matches:
+      foreground: '#1a1d23'
+      background: '#88c0d0'
+    focused_match:
+      foreground: '#1a1d23'
+      background: '#81a1c1'
+
+  # Line indicator colors (optional)
+  line_indicator:
+    foreground: None
+    background: None
+
+  # Footer bar colors (optional)
+  footer_bar:
+    foreground: '#d8dee9'
+    background: '#0d0e12'
+
+  # Selection colors
+  selection:
+    text: CellForeground
+    background: '#434c5e'  # editor.selectionBackground
+
+  # Normal colors
+  normal:
+    black:   '#3b4252'  # terminal.ansiBlack
+    red:     '#bf616a'  # terminal.ansiRed
+    green:   '#a3be8c'  # terminal.ansiGreen
+    yellow:  '#ebcb8b'  # terminal.ansiYellow
+    blue:    '#81a1c1'  # terminal.ansiBlue
+    magenta: '#b48ead'  # terminal.ansiMagenta
+    cyan:    '#88c0d0'  # terminal.ansiCyan
+    white:   '#e5e9f0'  # terminal.ansiWhite
+
+  # Bright colors
+  bright:
+    black:   '#4c566a'  # terminal.ansiBrightBlack
+    red:     '#bf616a'  # terminal.ansiBrightRed
+    green:   '#a3be8c'  # terminal.ansiBrightGreen
+    yellow:  '#ebcb8b'  # terminal.ansiBrightYellow
+    blue:    '#81a1c1'  # terminal.ansiBrightBlue
+    magenta: '#b48ead'  # terminal.ansiBrightMagenta
+    cyan:    '#8fbcbb'  # terminal.ansiBrightCyan
+    white:   '#eceff4'  # terminal.ansiBrightWhite
+
+  # Dim colors (optional)
+  dim:
+    black:   '#2e3440'
+    red:     '#985059'
+    green:   '#7d9571'
+    yellow:  '#b89c6a'
+    blue:    '#658099'
+    magenta: '#8e7189'
+    cyan:    '#6b9a9e'
+    white:   '#b8bec8'
+
+  # Indexed colors (optional)
+  indexed_colors:
+    - { index: 16, color: '#d08770' }  # Extended orange
+    - { index: 17, color: '#5e81ac' }  # Extended blue
+    - { index: 18, color: '#434c5e' }  # Extended gray 1
+    - { index: 19, color: '#4c566a' }  # Extended gray 2
+    - { index: 20, color: '#616e88' }  # Extended gray 3
+    - { index: 21, color: '#d8dee9' }  # Extended white

@@ -1,0 +1,12 @@
+[window]
+padding = { x = 10, y = 10 }
+
+[font]
+size = 9
+# normal = { family="FiraCode Nerd Font Propo", style="Retina"}
+normal = { family="JetBrainsMono NFM", style="Regular"}
+
+[general]
+import = [
+    "~/.config/alacritty/themes/nord.toml"
+]
