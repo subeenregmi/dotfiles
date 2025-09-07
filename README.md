@@ -1,0 +1,4 @@
+# dotfiles
+
+included:
+- alacritty
