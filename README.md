@@ -5,3 +5,5 @@ included:
 - zsh
 - neovim
 - i3wm
+- tmux
+- fonts
