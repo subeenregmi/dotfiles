@@ -119,7 +119,7 @@ alias db-spark-dev="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-main-
 alias db-spark-dev-core="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-core --port 5433"
 alias db-spark-dev-spark="cloud-sql-proxy sparklayer-main-dev:europe-west2:spark-dash-api --port 3312"
 
-alias dozzle="docker container start dozzle && firefox 'http://localhost:8080' &>/dev/null"
+alias dozzle="docker container start dozzle && firefox 'http://localhost:9000' &>/dev/null"
 
 export PATH=$PATH:/home/subeen/AppImages
 

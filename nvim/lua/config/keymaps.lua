@@ -11,6 +11,8 @@ vim.keymap.set("n", "gr", telescope_builtin.lsp_references, {})
 vim.keymap.set("n", "gr", telescope_builtin.lsp_references, {})
 vim.keymap.set("n", "gR", ":IncRename ", {})
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {})
 
 -- telescope mappings
 vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, {})
@@ -21,6 +23,7 @@ vim.keymap.set("n", "<leader>fo", telescope_builtin.oldfiles, {})
 vim.keymap.set("n", "<leader>fn", function()
 	require("telescope").extensions.notify.notify()
 end, {})
+vim.keymap.set("n", "<leader>fd", telescope_builtin.diagnostics, {})
 
 -- nvim-tree mappings
 vim.keymap.set("n", "<leader>to", ":NvimTreeOpen<CR>", {})
