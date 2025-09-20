@@ -2,9 +2,9 @@
 padding = { x = 10, y = 10 }
 
 [font]
-size = 9
-# normal = { family="FiraCode Nerd Font Propo", style="Retina"}
-normal = { family="JetBrainsMono NFM", style="Regular"}
+size = 11
+normal = { family="FiraCode Nerd Font Propo", style="Retina"}
+# normal = { family="JetBrainsMono NFM", style="Regular"}
 # normal = { family = "ComicShannsMono Nerd Font Propo", style="Regular"}
 
 [general]
