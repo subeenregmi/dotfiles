@@ -7,3 +7,5 @@ included:
 - i3wm
 - tmux
 - fonts
+- hyprland
+- nix os configs
