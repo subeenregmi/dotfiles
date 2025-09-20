@@ -40,6 +40,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.hyprland.enable = true;
+
   services.xserver.xkb = {
     layout = "gb";
     variant = "";
@@ -75,7 +77,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ 
+    kdePackages.dolphin
+    networkmanagerapplet
+  ];
 
   programs.vim.enable = true;
   programs.firefox.enable = true;

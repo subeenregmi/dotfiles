@@ -1,14 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-
-  imports = [
-    ./alacritty.nix
-    ./git.nix
-    ./nvim.nix
-    ./tmux.nix
-    ./zsh.nix
-  ];
+  imports = lib.filesystem.listFilesRecursive ./modules;
   home.username = "subeen";
   home.homeDirectory = "/home/subeen";
 
