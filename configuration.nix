@@ -80,6 +80,7 @@
   environment.systemPackages = with pkgs; [ 
     kdePackages.dolphin
     networkmanagerapplet
+    hyprpolkitagent
   ];
 
   programs.vim.enable = true;
