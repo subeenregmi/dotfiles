@@ -4,10 +4,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader
   boot.loader.grub.enable = true;
@@ -46,7 +46,7 @@
     layout = "gb";
     variant = "";
   };
-  
+
   # Keyboard
   console.keyMap = "uk";
 
@@ -68,16 +68,19 @@
     isNormalUser = true;
     description = "subeen";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [ ];
   };
-   
+
   # Programs
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [ 
+  environment.systemPackages = with pkgs; [
     kdePackages.dolphin
     networkmanagerapplet
     hyprpolkitagent
@@ -87,7 +90,6 @@
   programs.firefox.enable = true;
   programs.git.enable = true;
   programs.zsh.enable = true;
-
 
   # Services
 

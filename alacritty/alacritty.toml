@@ -9,5 +9,5 @@ normal = { family="FiraCode Nerd Font Propo", style="Retina"}
 
 [general]
 import = [
-    "~/.config/alacritty/themes/nord.toml"
+    "~/.config/alacritty/themes/catppuccin_mocha.toml"
 ]
