@@ -13,6 +13,7 @@ in
     ./plugins/telescope.nix
     ./plugins/icons.nix
     ./plugins/nvim-tree.nix
+    ./plugins/treesitter.nix
   ];
 
   programs.nixvim.enable = true;
