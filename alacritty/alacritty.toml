@@ -11,3 +11,6 @@ normal = { family="FiraCode Nerd Font Propo", style="Retina"}
 import = [
     "~/.config/alacritty/themes/catppuccin_mocha.toml"
 ]
+
+[env]
+TERM = "xterm256-color"
