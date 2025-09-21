@@ -12,6 +12,7 @@ in
     ./options.nix
     ./plugins/telescope.nix
     ./plugins/icons.nix
+    ./plugins/nvim-tree.nix
   ];
 
   programs.nixvim.enable = true;
