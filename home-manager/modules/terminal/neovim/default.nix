@@ -8,6 +8,7 @@ in
   imports = [
     nixvim.homeModules.nixvim
     ./colorscheme.nix
+    ./keymaps.nix
     ./plugins/telescope.nix
     ./plugins/icons.nix
   ];
