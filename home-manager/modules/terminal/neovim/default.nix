@@ -9,6 +9,7 @@ in
     nixvim.homeModules.nixvim
     ./colorscheme.nix
     ./keymaps.nix
+    ./options.nix
     ./plugins/telescope.nix
     ./plugins/icons.nix
   ];
