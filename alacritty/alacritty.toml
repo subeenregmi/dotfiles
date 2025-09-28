@@ -13,4 +13,4 @@ import = [
 ]
 
 [env]
-TERM = "xterm256-color"
+# TERM = "xterm256-color"

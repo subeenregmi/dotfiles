@@ -16,6 +16,7 @@ in
     ./plugins/nvim-tree.nix
     ./plugins/treesitter.nix
     ./lsp/nix.nix
+    ./lsp/go.nix
   ];
 
   programs.nixvim.enable = true;

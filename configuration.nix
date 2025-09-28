@@ -18,6 +18,15 @@
   networking.hostName = "subeen-nix"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  services.resolved = {
+    enable = true;
+  };
+  
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
+
   # Time, date and languages
   time.timeZone = "Europe/London";
 
@@ -38,7 +47,7 @@
   services.xserver.enable = true;
 
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = false;
 
   programs.hyprland.enable = true;
 
@@ -54,10 +63,13 @@
   services.printing.enable = true;
 
   # Sound
-  services.pulseaudio.enable = false;
+  services.pulseaudio.enable = true;
+  services.pulseaudio.support32Bit = true;
+  nixpkgs.config.pulseaudio = true;
+
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -71,6 +83,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "audio"
     ];
     packages = with pkgs; [ ];
   };
@@ -84,12 +97,36 @@
     kdePackages.dolphin
     networkmanagerapplet
     hyprpolkitagent
+    pavucontrol
   ];
 
   programs.vim.enable = true;
   programs.firefox.enable = true;
   programs.git.enable = true;
   programs.zsh.enable = true;
+
+  # Bluetooth
+  hardware.bluetooth = {
+  enable = true;
+  powerOnBoot = true;
+  settings = {
+    General = {
+      # Shows battery charge of connected devices on supported
+      # Bluetooth adapters. Defaults to 'false'.
+      Experimental = true;
+      # When enabled other devices can connect faster to us, however
+      # the tradeoff is increased power consumption. Defaults to
+      # 'false'.
+      FastConnectable = true;
+    };
+    Policy = {
+      # Enable all controllers when they are found. This includes
+      # adapters present on start as well as adapters that are plugged
+      # in later on. Defaults to 'true'.
+      AutoEnable = true;
+    };
+  };
+};
 
   # Services
 
