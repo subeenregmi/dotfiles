@@ -23,11 +23,18 @@
         };
       };
     }; 
+
+    lint = {
+      lintersByFt = {
+        go = [ "golangcilint" ];
+      };
+    };
   };
 
   home.packages = with pkgs; [
     gofumpt
     goimports-reviser
     golines
+    golangci-lint
   ];
 }

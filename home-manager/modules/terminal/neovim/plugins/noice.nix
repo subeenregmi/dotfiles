@@ -8,6 +8,9 @@
 		  "vim.lsp.util.stylize_markdown" = true;
 		};
 	  };
+      notify = {
+        enabled = true;
+      };
       presets = {
         bottom_search = true;
         command_palette = true;
