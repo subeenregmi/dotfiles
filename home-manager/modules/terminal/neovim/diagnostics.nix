@@ -1,7 +1,7 @@
 {
   programs.nixvim.diagnostic = {
     settings = {
-      virtual_text = true;
+      virtual_text = false;
     };
   };
 }

@@ -12,14 +12,24 @@
     conform-nvim = {
       settings = {
         formatters_by_ft = {
-          python = [ "ruff" ];
+          python = [ 
+            "ruff_format" 
+            "ruff_organize_imports"
+          ];
         };    
       };
     };
 
     lint = {
+      enable = true;
       lintersByFt = {
         python = [ "ruff" ];
+      };
+
+      linters = {
+        ruff = {
+          cmd = "${pkgs.ruff}/bin/ruff";
+        };
       };
     };
   };
