@@ -4,8 +4,8 @@
     settings = {
       lsp = {
 	    override = {
-		  "vim.lsp.util.convert_input_to_markdown_lines" = true;
-		  "vim.lsp.util.stylize_markdown" = true;
+		  "vim.lsp.util.convert_input_to_markdown_lines" = false;
+		  "vim.lsp.util.stylize_markdown" = false;
 		};
 	  };
       notify = {
@@ -18,6 +18,8 @@
         inc_rename = true;
         lsp_doc_border = true;
       };
+
+    # throttle = 10;
     };
   };
 }

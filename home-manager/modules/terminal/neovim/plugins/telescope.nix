@@ -6,7 +6,7 @@
       "<leader>fg" = { action = "live_grep"; };
       "<leader>fb" = { action = "buffers"; };
       "<leader>fh" = { action = "help_tags"; };
-      "<leader>fo" = { action = "old_files"; };
+      "<leader>fo" = { action = "oldfiles"; };
       "<leader>fd" = { action = "diagnostics"; };
     };
   };

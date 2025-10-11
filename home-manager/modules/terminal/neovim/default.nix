@@ -11,6 +11,7 @@ in
     ./keymaps.nix
     ./options.nix
     ./diagnostics.nix
+    ./autocmds.nix
     ./plugins/telescope.nix
     ./plugins/icons.nix
     ./plugins/nvim-tree.nix

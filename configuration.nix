@@ -18,6 +18,23 @@
   networking.hostName = "subeen-nix"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  # sparklayer
+  networking.extraHosts = 
+  ''
+    127.0.0.1 app.local.sparklayer.io
+    127.0.0.1 local.sparklayer.io
+    127.0.0.1 redis-cache7
+    127.0.0.1 spark-main-db-instance
+    127.0.0.1 core-db
+    127.0.0.1 spark-integration-wix
+    127.0.0.1 wordpress.local.sparklayer.io
+    127.0.0.1 magento.local.sparklayer.io
+  '';
+   
+
+  # Docker
+  virtualisation.docker.enable = true;
+
   services.resolved = {
     enable = true;
   };
@@ -84,6 +101,7 @@
       "networkmanager"
       "wheel"
       "audio"
+      "docker"
     ];
     packages = with pkgs; [ ];
   };
@@ -98,12 +116,22 @@
     networkmanagerapplet
     hyprpolkitagent
     pavucontrol
+    libgphoto2
+    gphoto2
+    gphoto2fs
+    digikam
+    lsof
+    hyprlock
+    hypridle
   ];
 
   programs.vim.enable = true;
   programs.firefox.enable = true;
   programs.git.enable = true;
   programs.zsh.enable = true;
+  programs.gphoto2.enable = true;
+
+  programs.hyprlock.enable = true;
 
   # Bluetooth
   hardware.bluetooth = {
@@ -128,6 +156,9 @@
   };
 };
 
+  services.blueman.enable = true;
+
+
   # Services
 
   # Services - Battery
@@ -137,6 +168,8 @@
 
   # Services - CPU
   services.throttled.enable = true;
+
+  services.hypridle.enable = true;
 
   fonts.packages = with pkgs; [ ];
 
