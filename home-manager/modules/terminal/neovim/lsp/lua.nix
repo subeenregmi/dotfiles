@@ -2,11 +2,14 @@
   programs.nixvim.plugins = {
     lsp = {
       servers = {
-        tailwindcss = {
+        lua_ls = {
+          enable = true;
+        };
+
+        stylua = {
           enable = true;
         };
       };
     };
   };
 }
-

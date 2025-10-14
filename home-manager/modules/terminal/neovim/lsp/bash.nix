@@ -2,11 +2,10 @@
   programs.nixvim.plugins = {
     lsp = {
       servers = {
-        tailwindcss = {
+        bashls = {
           enable = true;
         };
       };
     };
   };
 }
-

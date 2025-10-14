@@ -1,12 +1,13 @@
+{ pkgs, ... }:
 {
   programs.nixvim.plugins = {
     lsp = {
       servers = {
-        tailwindcss = {
+        intelephense = {
           enable = true;
+          package = pkgs.intelephense;
         };
       };
     };
   };
 }
-

@@ -1,6 +1,6 @@
 {
   programs.nixvim.plugins.render-markdown = {
-    enable = false;
+    enable = true;
   };
 
   # programs.nixvim.autoCmd = [ 

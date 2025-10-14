@@ -2,7 +2,11 @@
   programs.nixvim.plugins = {
     lsp = {
       servers = {
-        tailwindcss = {
+        html = {
+          enable = true;
+        };
+        
+        superhtml = {
           enable = true;
         };
       };

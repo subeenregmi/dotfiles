@@ -15,6 +15,7 @@
           python = [ 
             "ruff_format" 
             "ruff_organize_imports"
+            "black"
           ];
         };    
       };
@@ -36,5 +37,6 @@
 
   home.packages = with pkgs; [
     ruff
+    black
   ];
 }
