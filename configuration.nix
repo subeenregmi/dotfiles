@@ -123,8 +123,10 @@
     lsof
     hyprlock
     hypridle
+    hyprpaper
     zip
     unzip
+    feh
   ];
 
   programs.vim.enable = true;
