@@ -135,6 +135,10 @@
 
   programs.hyprlock.enable = true;
 
+  programs.tmux = {
+    enable = true;
+  };
+
   # Bluetooth
   hardware.bluetooth = {
   enable = true;
