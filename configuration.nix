@@ -86,10 +86,10 @@
 
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = false;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
+    enable = true;
+    alsa.enable = false;
+    alsa.support32Bit = false;
+    pulse.enable = false;
   };
 
   # Users
@@ -127,6 +127,11 @@
     zip
     unzip
     feh
+    sysstat
+    grim
+    slurp  
+    wl-clipboard
+    jq
   ];
 
   programs.vim.enable = true;
@@ -166,6 +171,7 @@
 
   services.blueman.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Services
 

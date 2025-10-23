@@ -8,17 +8,27 @@
       enable = true;
       plugins = [ "poetry" ];
     };
-    plugins = with pkgs; [
+    shellAliases = {
+      screenshot = ''
+      if area=$(slurp); then 
+        grim -g "$area" - | wl-copy && wl-paste > /tmp/screenshot.png && dunstify -i "/tmp/screenshot.png" "screenshotted!";
+      else; 
+        dunstify "failed screenshot :("; 
+      fi
+      '';
+    };
+plugins = with pkgs; [
       {
-        name = "agkozak-zsh-prompt";
+        name = "agkozak-zsh-prompt-nix";
         src = fetchFromGitHub {
-          owner = "agkozak";
-          repo = "agkozak-zsh-prompt";
-          rev = "v3.7.0";
-          sha256 = "1iz4l8777i52gfynzpf6yybrmics8g4i3f1xs3rqsr40bb89igrs";
+          owner = "subeenregmi";
+          repo = "agkozak-zsh-prompt-nix";
+          rev = "v0.0.1";
+          sha256 = "mqwK2CBwEZLr4ICzgj7Dm8PHHLAsVIzoEbYapDuKLgI=";
         };
         file = "agkozak-zsh-prompt.plugin.zsh";
       }
     ];
   };
+
 }
