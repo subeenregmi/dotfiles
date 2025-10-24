@@ -1,7 +1,7 @@
 # SUBEEN REGMI CONFIGURATION.NIX
 # subeenregmi.com @ 2025
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -37,6 +37,20 @@
 
   services.resolved = {
     enable = true;
+  };
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true; # Open ports in the firewall for Syncthing
+    user = "subeen";
+    dataDir = "/home/subeen";
+    configDir = "/home/subeen/.config/syncthing";
+    folders = {
+      "subeenfiles" = {
+        id = "ietfk-xac4y";
+        path = "/home/subeen/subeenfiles";
+      };
+    };
   };
   
   services.mullvad-vpn = {
@@ -132,6 +146,7 @@
     slurp  
     wl-clipboard
     jq
+    lshw
   ];
 
   programs.vim.enable = true;
@@ -145,6 +160,8 @@
   programs.tmux = {
     enable = true;
   };
+
+  programs.nix-ld.enable = true;
 
   # Bluetooth
   hardware.bluetooth = {
@@ -185,7 +202,7 @@
 
   services.hypridle.enable = true;
 
-  fonts.packages = with pkgs; [ ];
+  fonts.packages = builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
