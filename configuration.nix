@@ -147,6 +147,8 @@
     wl-clipboard
     jq
     lshw
+    inotify-tools
+    libappindicator-gtk3
   ];
 
   programs.vim.enable = true;

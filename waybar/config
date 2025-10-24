@@ -1,0 +1,19 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "battery", "bluetooth", "cpu", "tray"],
+    "height": 30,
+    "clock": {
+        "timezone": "Europe/London",
+        "format": "{:%H:%M}",
+        "interval": 1,
+        "tooltip-format": "{calendar}",
+        "calendar": {
+            "format": {
+                "today": "<span color='#f38ba8'>{}</span>",
+            },
+        },
+    },
+}

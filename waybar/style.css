@@ -1,0 +1,63 @@
+@import "mocha.css";
+
+* {
+    font-family: "BlexMono Nerd Font";
+    color: @text;
+}
+
+#waybar {
+    background-color: transparent;
+    margin: 0;
+}
+
+tooltip {
+    border: 1px solid @lavender;
+    background-color: @crust;
+}
+
+
+#clock {
+    background-color: @mantle;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 12.5px;
+    border: 2px solid @lavender;
+}
+
+#workspaces {
+    background-color: @mantle;
+    border: 2px solid @lavender;
+    border-radius: 12.5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+#workspaces button:not(:first-child) {
+    background-color: transparent;
+    padding: 0 7.5px 0 9.5px;
+    border-radius: 0;
+    border-left: 1px solid @lavender;
+}
+
+/* workspaces to be created  */
+#workspaces button.empty {
+}
+
+
+#workspaces button.visible {
+}
+
+#workspaces button.active {
+    transition: all 0.2s linear;
+}
+
+#workspaces button.active label {
+    color: @green;
+    font-weight: 900;
+}
+
+#workspaces button.urgent {
+    color: @red;
+}
+
+
