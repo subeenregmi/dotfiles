@@ -7,7 +7,6 @@
 
 #waybar {
     background-color: transparent;
-    margin: 0;
 }
 
 tooltip {
@@ -19,7 +18,6 @@ tooltip {
 #clock {
     background-color: @mantle;
     padding: 5px 10px;
-    margin-top: 5px;
     border-radius: 12.5px;
     border: 2px solid @lavender;
 }
@@ -28,16 +26,8 @@ tooltip {
     background-color: @mantle;
     border: 2px solid @lavender;
     border-radius: 12.5px;
-    margin-top: 5px;
-    margin-left: 5px;
 }
 
-#workspaces button:not(:first-child) {
-    background-color: transparent;
-    padding: 0 7.5px 0 9.5px;
-    border-radius: 0;
-    border-left: 1px solid @lavender;
-}
 
 /* workspaces to be created  */
 #workspaces button.empty {
@@ -60,4 +50,36 @@ tooltip {
     color: @red;
 }
 
+#battery.warning {
+    color: @yellow;
+}
 
+#battery.warning {
+    color: @red;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#backlight, #battery, #bluetooth, #cpu, #tray, #pulseaudio, #memory, #disk{
+    padding: 0px 7.5px;
+}
+
+.modules-right {
+    background-color: @mantle;
+    border: 2px solid @lavender;
+    border-radius: 12.5px;
+}
+
+#bluetooth.disabled {
+    color: @peach;
+}
+
+#bluetooth.off {
+    color: @red;
+}
+
+#bluetooth.connected {
+    color: @green;
+}

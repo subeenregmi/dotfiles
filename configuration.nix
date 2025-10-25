@@ -77,7 +77,15 @@
   # Display
   services.xserver.enable = true;
 
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+    
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "colormix";
+    };
+  };
+
   services.xserver.desktopManager.gnome.enable = false;
 
   programs.hyprland.enable = true;
@@ -149,6 +157,7 @@
     lshw
     inotify-tools
     libappindicator-gtk3
+    playerctl
   ];
 
   programs.vim.enable = true;
