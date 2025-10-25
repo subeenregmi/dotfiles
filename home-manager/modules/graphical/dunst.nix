@@ -7,7 +7,7 @@
       global = {
         width = 300;
         height = 300;
-        offset = "50x30";
+        offset = "20x20";
         frame_color = "#a6e3a1";
         font = "BlexMono Nerd Font 8";
         gap_size = 2;

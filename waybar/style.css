@@ -20,6 +20,12 @@ tooltip {
     padding: 5px 10px;
     border-radius: 12.5px;
     border: 2px solid @lavender;
+    margin-top: 5px;
+}
+
+.modules-left {
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 #workspaces {
@@ -30,12 +36,10 @@ tooltip {
 
 
 /* workspaces to be created  */
-#workspaces button.empty {
-}
+#workspaces button.empty {}
 
 
-#workspaces button.visible {
-}
+#workspaces button.visible {}
 
 #workspaces button.active {
     transition: all 0.2s linear;
@@ -54,7 +58,7 @@ tooltip {
     color: @yellow;
 }
 
-#battery.warning {
+#battery.critical {
     color: @red;
 }
 
@@ -62,7 +66,14 @@ tooltip {
     color: @green;
 }
 
-#backlight, #battery, #bluetooth, #cpu, #tray, #pulseaudio, #memory, #disk{
+#backlight,
+#battery,
+#bluetooth,
+#cpu,
+#tray,
+#pulseaudio,
+#memory,
+#disk {
     padding: 0px 7.5px;
 }
 
@@ -70,6 +81,8 @@ tooltip {
     background-color: @mantle;
     border: 2px solid @lavender;
     border-radius: 12.5px;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 #bluetooth.disabled {

@@ -82,7 +82,7 @@
   services.displayManager.ly = {
     enable = true;
     settings = {
-      animation = "colormix";
+      animation = "doom";
     };
   };
 
@@ -158,6 +158,8 @@
     inotify-tools
     libappindicator-gtk3
     playerctl
+    wget
+    waybar
   ];
 
   programs.vim.enable = true;

@@ -21,7 +21,7 @@
       routes = [
         {
           view = "notify";
-          filter = { event = "msg_showmode"; };
+          filter = { event = "msg_showmode"; find = "recording"; };
         }
       ];
     # throttle = 10;
