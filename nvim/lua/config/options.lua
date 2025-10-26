@@ -35,3 +35,5 @@ vim.o.foldenable = true
 -- vim.o.fillchars = "eob: ,fold: ,foldopen:,foldsep:,foldclose:"
 vim.o.statuscolumn =
 	'%=%l%s%#FoldColumn#%{foldlevel(v:lnum) > foldlevel(v:lnum - 1) ? (foldclosed(v:lnum) == -1 ? " " : "   ") : "  " }%*'
+
+vim.cmd.colorscheme("catppuccin-mocha")

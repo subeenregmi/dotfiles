@@ -22,6 +22,8 @@ return {
 			lua = { "stylua" },
 			python = { "ruff", "black" },
 			go = { "gofumpt", "goimports", "golines" },
+			typescript = { "prettierd" },
+			typescriptreact = { "prettierd" },
 		},
 		-- Set default options
 		default_format_opts = {

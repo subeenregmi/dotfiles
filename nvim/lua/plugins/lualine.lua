@@ -2,9 +2,6 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
-			local nord_theme = require("lualine.themes.nord")
-			nord_theme.normal.c.bg = nil
-
 			local trouble = require("trouble")
 			local symbols = trouble.statusline({
 				mode = "lsp_document_symbols",
@@ -22,7 +19,7 @@ return {
 			require("lualine").setup({
 
 				options = {
-					theme = nord_theme,
+					theme = "catppuccin",
 					component_separators = "|",
 					section_separators = { left = "", right = "" },
 				},

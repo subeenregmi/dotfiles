@@ -37,6 +37,20 @@
     };
   };
 
+  programs.nixvim.autoCmd = [
+    {
+      event = [ "FileType" ];
+      callback = {
+        __raw = ''
+        function()
+            vim.opt_local.shiftwidth = 2
+            vim.opt_local.tabstop = 2
+        end
+       '';
+      };
+    }
+  ];
+
   home.packages = with pkgs; [
     prettierd
     eslint_d
