@@ -91,11 +91,8 @@
 
   services.xserver.xkb = {
     layout = "us";
-    variant = "";
   };
 
-  # Keyboard
-  console.keyMap = "us";
 
   # Printing
   services.printing.enable = true;
