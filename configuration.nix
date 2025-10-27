@@ -10,12 +10,11 @@
   ];
 
   # Bootloader
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = "subeen-nix"; # Define your hostname.
+  networking.hostName = "subeen-ser8"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # sparklayer
@@ -91,27 +90,24 @@
   programs.hyprland.enable = true;
 
   services.xserver.xkb = {
-    layout = "gb";
+    layout = "us";
     variant = "";
   };
 
   # Keyboard
-  console.keyMap = "uk";
+  console.keyMap = "us";
 
   # Printing
   services.printing.enable = true;
 
   # Sound
-  services.pulseaudio.enable = true;
-  services.pulseaudio.support32Bit = true;
-  nixpkgs.config.pulseaudio = true;
-
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = false;
-    alsa.support32Bit = false;
-    pulse.enable = false;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
   # Users
@@ -206,12 +202,6 @@
   # Services
 
   # Services - Battery
-  services.thermald.enable = true;
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
-
-  # Services - CPU
-  services.throttled.enable = true;
 
   services.hypridle.enable = true;
 
