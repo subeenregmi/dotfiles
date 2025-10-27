@@ -40,6 +40,7 @@
   programs.nixvim.autoCmd = [
     {
       event = [ "FileType" ];
+      pattern = ["typescript" "typescriptreact"];
       callback = {
         __raw = ''
         function()
