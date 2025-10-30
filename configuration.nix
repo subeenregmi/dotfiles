@@ -44,10 +44,14 @@
     user = "subeen";
     dataDir = "/home/subeen";
     configDir = "/home/subeen/.config/syncthing";
+    devices = {
+      "subeen-nix" = { id = "K5UKEEX-2JNVCA7-VHEW636-PBXFVYD-MCE6X3X-5OXTR75-OXRLRZ2-CZN2NQD"; };
+    };
     folders = {
       "subeenfiles" = {
         id = "ietfk-xac4y";
         path = "/home/subeen/subeenfiles";
+        devices = [ "subeen-nix" ];
       };
     };
   };
