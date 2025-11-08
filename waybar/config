@@ -17,8 +17,7 @@
     "clock": {
         "timezone": "Europe/London",
         "format": "{:%H:%M}",
-        "interval": 1,
-        "tooltip-format": "{calendar}",
+        "interval": 1, "tooltip-format": "{calendar}",
         "calendar": {
             "format": {
                 "today": "<span color='#f38ba8'><b>{}</b></span>",
@@ -72,8 +71,7 @@
     },
 
     "custom/music" : {
-        "exec": "../../music-waybar-module/build/music-waybar-module",
-        "exec-if": "pgrep spotify",
+        "exec": "/home/subeen/subeenfiles/code/music-waybar-module/build/music-waybar-module",
         "format": "{text}",
         "return-type": "json",
         "max-length": 25,
