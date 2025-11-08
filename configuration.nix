@@ -157,6 +157,7 @@
     playerctl
     wget
     waybar
+    glib
   ];
 
   programs.vim.enable = true;
