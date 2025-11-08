@@ -96,3 +96,27 @@ tooltip {
 #bluetooth.connected {
     color: @green;
 }
+
+#custom-music {
+    background-color: @mantle;
+    border: 2px solid @lavender;
+    border-radius: 12.5px;
+    margin-left: 5px;
+    padding: 0px 7.5px;
+}
+
+#custom-music.unknown {
+    padding-right: 12.5px;
+}
+
+#custom-music.normal {
+    color: @green;
+}
+
+#custom-music.paused {
+    color: @yellow;
+}
+
+#custom-music.advert {
+    color: @red;
+}

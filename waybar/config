@@ -1,7 +1,7 @@
 {
     "layer": "bottom",
     "position": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "custom/music"],
     "modules-center": ["clock"],
     "modules-right": [
         "backlight", 
@@ -69,5 +69,13 @@
     "disk": {
         "format": "󰋊 {specific_free:0.1f} GiB",
         "unit": "GiB"
-    }
+    },
+
+    "custom/music" : {
+        "exec": "../../music-waybar-module/build/music-waybar-module",
+        "exec-if": "pgrep spotify",
+        "format": "{text}",
+        "return-type": "json",
+        "max-length": 25,
+    },
 }
