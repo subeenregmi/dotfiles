@@ -45,10 +45,14 @@
     user = "subeen";
     dataDir = "/home/subeen";
     configDir = "/home/subeen/.config/syncthing";
+    devices = {
+      "subeen-ser8" = { id = "TW4YHX3-AYX5QC3-JUEYBUU-2S3JBGM-L5DWERY-S2FX6YW-SRQFDGC-3KNV4QH"; };
+    };
     folders = {
       "subeenfiles" = {
         id = "ietfk-xac4y";
         path = "/home/subeen/subeenfiles";
+        devices = [ "subeen-ser8" ];
       };
     };
   };
@@ -174,6 +178,8 @@
   programs.tmux = {
     enable = true;
   };
+
+  programs.direnv.enable = true;
 
   programs.nix-ld.enable = true;
 
