@@ -19,10 +19,6 @@
         lsp_doc_border = true;
       };
       routes = [
-        {
-          view = "notify";
-          filter = { event = "msg_showmode"; find = "recording"; };
-        }
       ];
     # throttle = 10;
     };
