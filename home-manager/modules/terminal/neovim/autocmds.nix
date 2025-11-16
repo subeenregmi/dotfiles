@@ -15,7 +15,6 @@
   {
     event = [ "RecordingEnter" "RecordingLeave"];
     desc = "Notify when recording a macro";
-    group = "macro-notify";
     callback = {
       __raw = ''
         function(ev)
