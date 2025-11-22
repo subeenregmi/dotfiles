@@ -157,6 +157,7 @@
     playerctl
     wget
     waybar
+    solc
     glib
   ];
 

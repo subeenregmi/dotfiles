@@ -6,7 +6,7 @@
 	    override = {
 		  "vim.lsp.util.convert_input_to_markdown_lines" = false;
 		  "vim.lsp.util.stylize_markdown" = false;
-		};
+		  };
 	  };
       notify = {
         enabled = true;
@@ -20,7 +20,6 @@
       };
       routes = [
       ];
-    # throttle = 10;
     };
   };
 }
