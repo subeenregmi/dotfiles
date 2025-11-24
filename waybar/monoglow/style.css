@@ -1,0 +1,56 @@
+@import "monoglow.css";
+
+* {
+    font-family: "CaskaydiaMono Nerd Font";
+    color: @fg;
+}
+
+#waybar {
+    background-color: @bg-dark;
+}
+
+tooltip {
+    background-color: @bg-md;
+    border: 2px solid @bg-light
+}
+
+
+#clock {
+    color: @green;
+    padding: 5px 10px;
+}
+
+#workspaces {
+    background-color: @bg-md;
+}
+
+
+/* workspaces to be created  */
+#workspaces button.empty {}
+
+
+#workspaces button.visible {}
+
+#workspaces button.active {
+    transition: all 0.2s linear;
+}
+
+#workspaces button.active label {
+    color: @green;
+    font-weight: 900;
+}
+
+#backlight,
+#battery,
+#bluetooth,
+#cpu,
+#tray,
+#pulseaudio,
+#memory,
+#disk {
+    padding: 0px 7.5px;
+}
+
+.modules-right {
+    background-color: @bg-md;
+}
