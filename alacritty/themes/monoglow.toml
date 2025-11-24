@@ -1,0 +1,29 @@
+# Monoglow
+# monoglow alacriity port by subeen regmi
+
+# Default colors
+[colors.primary]
+background = '#121212'
+foreground = '#cccccc'
+
+# Normal colors
+[colors.normal]
+black   = '#2a2a2a'
+red     = '#deeeed'
+green   = '#1bfd9c'
+yellow  = '#b4b4b4'
+blue    = '#7a7a7a'
+magenta = '#66b2b2'
+cyan    = '#cccccc'
+white   = '#f1f1f1'
+
+# Bright colors
+[colors.bright]
+black   = '#4a4a4a'
+red     = '#708090'
+green   = '#a6ffc9'
+yellow  = '#dddddd'
+blue    = '#aaaaaa'
+magenta = '#49c4c4'
+cyan    = '#d3d3d3'
+white   = '#ffffff'
