@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = lib.filesystem.listFilesRecursive ./modules;
+  imports = lib.filter (n: lib.strings.hasSuffix ".nix" n) (lib.filesystem.listFilesRecursive ./modules);
   home.username = "subeen";
   home.homeDirectory = "/home/subeen";
 

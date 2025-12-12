@@ -177,8 +177,10 @@
     playerctl
     wget
     waybar
-    solc
     glib
+    zlib
+    steam-run
+    ncdu
   ];
 
   programs.vim.enable = true;
