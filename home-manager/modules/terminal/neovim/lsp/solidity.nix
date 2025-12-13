@@ -1,17 +1,20 @@
 let 
-  unstable = import <nixos-unstable> {};
+  pkgs = import <nixpkgs> {};
   system = builtins.currentSystem;
-  solhintFlake = builtins.getFlake "/home/subeen/subeenfiles/code/dotfiles/home-manager/modules/terminal/neovim/custom/solhint";
+  solhintFlake = builtins.getFlake "/home/subeen/subeenfiles/code/dotfiles/custom/solhint";
   solhint = solhintFlake.packages.${system}.default;
+
+  soliditylsFlake = builtins.getFlake "/home/subeen/subeenfiles/code/dotfiles/custom/solidity_nm";
+  solidityls = soliditylsFlake.packages.${system}.default;
 in
 {
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
       servers = {
-        solidity_ls = {
+        solidity_ls_nomicfoundation = {
           enable = true;
-          package = unstable.vscode-solidity-server;
+          package = solidityls;
           settings = {
             linter = "solhint";
           };
@@ -32,5 +35,10 @@ in
       };
     };
   };
-}
 
+  home.packages = with pkgs; [
+    solc
+    solhint
+    solidityls
+  ];
+}

@@ -9,17 +9,21 @@
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
-    stdenv = pkgs.stdenv;
   in {
-    packages.${system}.default = stdenv.mkDerivation {
+    packages.${system}.default = pkgs.buildNpmPackage {
       name = "solidity-ls";
+      pname = "solidity-ls";
+      version = "1.0.0";
 
       src = pkgs.fetchFromGitHub {
-        owner = "qiuxiang";
+        owner = "subeenregmi";
         repo = "solidity-ls";
-        tag = "v0.5.4";
-        hash = "sha256-pK/dt3kzR32ftkVECSv2sPOJlg+16mSuH+Kf0ORyoCo=";
+        tag = "v1.0.1";
+        hash = "sha256-V9P+fyNpm8yID1yvQaotEjPNE3m6YK6NgHMbT0ig+Fo=";
       };
+
+      npmDepsHash = "sha256-ucjvQVa9oVLP4VDD0/Ribrhk5xHVllOEdAjy8BnFf0Y=";
+
     };
   };
 }
