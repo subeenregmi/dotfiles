@@ -30,6 +30,10 @@
     127.0.0.1 wordpress.local.sparklayer.io
     127.0.0.1 magento.local.sparklayer.io
   '';
+
+  # spotify
+  networking.firewall.allowedTCPPorts = [ 57621 ];
+  networking.firewall.allowedUDPPorts = [ 5353 ];
    
 
   # Docker
@@ -178,6 +182,8 @@
     wget
     waybar
     glib
+    unrar
+    rar
     zlib
     steam-run
     ncdu
@@ -193,6 +199,12 @@
 
   programs.tmux = {
     enable = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
   programs.direnv.enable = true;

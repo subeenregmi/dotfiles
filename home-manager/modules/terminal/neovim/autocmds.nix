@@ -29,5 +29,16 @@
         '';
       };
     }
+    {
+      event = [ "BufRead" "BufNewFile" ];
+      pattern = "*.circom";
+      callback = {
+        __raw = ''
+          function(args)
+            vim.bo[args.buf].filetype = "circom"
+          end
+        '';
+      };
+    }
   ];
 }

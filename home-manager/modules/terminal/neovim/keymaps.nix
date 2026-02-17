@@ -59,6 +59,15 @@
           noremap = true;
         };
       } 
+
+      {
+        action = "<cmd>term make<CR>";
+        key = "<leader>r";
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      } 
     ];
   };
 }
