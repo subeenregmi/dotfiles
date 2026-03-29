@@ -40,5 +40,20 @@
         '';
       };
     }
+    {
+      event = [ "BufReadCmd" ];
+      pattern = "*.pdf";
+      callback = {
+        __raw = ''
+          function(args)
+            local file = vim.fn.expand("%:p")
+
+            vim.fn.jobstart({"zathura", file }, { detach = true })
+
+            vim.cmd("bd!")
+          end
+        '';
+      };
+    }
   ];
 }

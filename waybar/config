@@ -11,7 +11,8 @@
         "cpu", 
         "memory", 
         "disk", 
-        "tray"
+        "tray",
+        "idle_inhibitor"
     ],
     "height": 30,
     "clock": {
@@ -75,5 +76,13 @@
         "format": "{text}",
         "return-type": "json",
         "max-length": 25,
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
 }

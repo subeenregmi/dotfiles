@@ -6,6 +6,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
+    <nixos-hardware/lenovo/thinkpad/t480>
     ./hardware-configuration.nix
   ];
 
@@ -44,19 +45,21 @@
   };
 
   services.syncthing = {
-    enable = true;
+    enable = false;
     openDefaultPorts = true; # Open ports in the firewall for Syncthing
     user = "subeen";
     dataDir = "/home/subeen";
     configDir = "/home/subeen/.config/syncthing";
-    devices = {
-      "subeen-ser8" = { id = "TW4YHX3-AYX5QC3-JUEYBUU-2S3JBGM-L5DWERY-S2FX6YW-SRQFDGC-3KNV4QH"; };
-    };
-    folders = {
-      "subeenfiles" = {
-        id = "ietfk-xac4y";
-        path = "/home/subeen/subeenfiles";
-        devices = [ "subeen-ser8" ];
+    settings = {
+      devices = {
+        "subeen-ser8" = { id = "TW4YHX3-AYX5QC3-JUEYBUU-2S3JBGM-L5DWERY-S2FX6YW-SRQFDGC-3KNV4QH"; };
+      };
+      folders = {
+        "subeenfiles" = {
+          id = "ietfk-xac4y";
+          path = "/home/subeen/subeenfiles";
+          devices = [ "subeen-ser8" ];
+        };
       };
     };
   };
@@ -85,7 +88,7 @@
   # Display
   services.xserver.enable = true;
 
-  services.xserver.displayManager.gdm.enable = false;
+  services.displayManager.gdm.enable = false;
     
   services.displayManager.ly = {
     enable = true;
@@ -94,7 +97,7 @@
     };
   };
 
-  services.xserver.desktopManager.gnome.enable = false;
+  services.desktopManager.gnome.enable = false;
 
   programs.hyprland.enable = true;
 
@@ -187,6 +190,7 @@
     zlib
     steam-run
     ncdu
+    intel-gpu-tools
   ];
 
   programs.vim.enable = true;
