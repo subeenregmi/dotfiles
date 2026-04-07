@@ -23,5 +23,7 @@ in
 
   programs.nixvim = {
     enable = true;
+    extraLuaPackages = ps: [ ps.magick ];
+    extraPackages = [ pkgs.imagemagick ];
   };
 }

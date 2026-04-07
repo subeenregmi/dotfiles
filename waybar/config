@@ -14,7 +14,7 @@
         "tray",
         "idle_inhibitor"
     ],
-    "height": 30,
+    "height": 38,
     "clock": {
         "timezone": "Europe/London",
         "format": "{:%H:%M}",
@@ -73,9 +73,16 @@
 
     "custom/music" : {
         "exec": "/home/subeen/subeenfiles/code/music-waybar-module/build/music-waybar-module",
-        "format": "{text}",
+        "format": "{icon}{text}",
+        "format-icons": {
+            "spotify":"󰓇",
+            "feishin":"󰝚",
+            "music": "󰝚",
+            "firefox": "󰈹",
+            "empty": "󰝚"
+        },
         "return-type": "json",
-        "max-length": 25,
+        "max-length": 30,
     },
 
     "idle_inhibitor": {

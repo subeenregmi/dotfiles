@@ -6,26 +6,23 @@
 }
 
 #waybar {
-    background-color: transparent;
+    background-color: @base;
 }
+
+.modules-left {
+    margin-left: 1px;
+}
+
+.modules-right {
+    background-color: @mantle;
+    border: 2px solid @lavender;
+    border-radius: 12.5px;
+}
+
 
 tooltip {
     border: 1px solid @lavender;
     background-color: @crust;
-}
-
-
-#clock {
-    background-color: @mantle;
-    padding: 5px 10px;
-    border-radius: 12.5px;
-    border: 2px solid @lavender;
-    margin-top: 5px;
-}
-
-.modules-left {
-    margin-left: 5px;
-    margin-top: 5px;
 }
 
 #workspaces {
@@ -35,9 +32,17 @@ tooltip {
 }
 
 
+#clock {
+    background-color: @mantle;
+    padding: 5px 10px;
+    border-radius: 12.5px;
+    border: 2px solid @lavender;
+    font-weight: bold;
+}
+
+
 /* workspaces to be created  */
 #workspaces button.empty {}
-
 
 #workspaces button.visible {}
 
@@ -48,6 +53,7 @@ tooltip {
 #workspaces button.active label {
     color: @green;
     font-weight: 900;
+    text-decoration: @teal underline;
 }
 
 #workspaces button.urgent {
@@ -77,13 +83,6 @@ tooltip {
     padding: 0px 7.5px;
 }
 
-.modules-right {
-    background-color: @mantle;
-    border: 2px solid @lavender;
-    border-radius: 12.5px;
-    margin-right: 5px;
-    margin-top: 5px;
-}
 
 #bluetooth.disabled {
     color: @peach;
@@ -105,8 +104,11 @@ tooltip {
     padding: 0px 7.5px;
 }
 
-#custom-music.unknown {
+#custom-music.empty {
     padding-right: 12.5px;
+}
+
+#custom-music.unknown {
 }
 
 #custom-music.normal {

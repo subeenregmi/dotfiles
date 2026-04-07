@@ -1,9 +1,16 @@
+let 
+  unstable = import <nixos-unstable> {};
+in
 {
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
       servers = {
-        rust-analyzer = {
+        rust_analyzer = {
+          package = unstable.rust-analyzer;
+          cargoPackage = unstable.cargo;
+          rustcPackage = unstable.rustc;
+          rustfmtPackage = unstable.rustfmt;
           enable = true;
           installCargo = true;
           installRustc = true;

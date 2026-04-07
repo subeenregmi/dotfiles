@@ -1,6 +1,6 @@
 #!/bin/sh
 
-waybar --config config --style ./monoglow/style.css &
+waybar --config config --style style.css &
 
 inotifywait -m -r -e modify . | while read -r _; do
   echo "Reloading Waybar..."
