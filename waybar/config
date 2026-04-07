@@ -1,20 +1,22 @@
 {
     "layer": "bottom",
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "custom/music"],
+    "modules-left": ["hyprland/workspaces", "bluetooth", "custom/music"],
     "modules-center": ["clock"],
     "modules-right": [
-        "backlight", 
-        "battery", 
-        "pulseaudio", 
-        "bluetooth", 
-        "cpu", 
-        "memory", 
-        "disk", 
-        "tray",
-        "idle_inhibitor"
+        "network",
+        "backlight",
+        "battery",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "disk",
+        "idle_inhibitor",
+        "tray"
     ],
     "height": 38,
+    "margin-left": 5,
+    "margin-right": 5,
     "clock": {
         "timezone": "Europe/London",
         "format": "{:%H:%M}",
@@ -64,6 +66,7 @@
 
     "tray": {
         "spacing": 5,
+        "icon-size": 21
     },
 
     "disk": {
@@ -83,6 +86,16 @@
         },
         "return-type": "json",
         "max-length": 30,
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {bandwidthUpBytes} 󰁝 {bandwidthDownBytes} 󰁅",
+        "format-ethernet": "󰈀 {bandwidthUpBytes} 󰁝 {bandwidthDownBytes} 󰁅",
+        "format-disconnected": "󰖪",
+        "interval": 2,
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
     },
 
     "idle_inhibitor": {

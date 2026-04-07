@@ -6,7 +6,8 @@
 }
 
 #waybar {
-    background-color: @base;
+    background: transparent;
+    border-bottom: 1px solid rgba(203, 166, 247, 0.3);
 }
 
 .modules-left {
@@ -14,29 +15,19 @@
 }
 
 .modules-right {
-    background-color: @mantle;
-    border: 2px solid @lavender;
-    border-radius: 12.5px;
 }
 
 
 tooltip {
-    border: 1px solid @lavender;
+    border: 1px solid @mauve;
     background-color: @crust;
 }
 
-#workspaces {
-    background-color: @mantle;
-    border: 2px solid @lavender;
-    border-radius: 12.5px;
-}
+#workspaces {}
 
 
 #clock {
-    background-color: @mantle;
     padding: 5px 10px;
-    border-radius: 12.5px;
-    border: 2px solid @lavender;
     font-weight: bold;
 }
 
@@ -53,7 +44,6 @@ tooltip {
 #workspaces button.active label {
     color: @green;
     font-weight: 900;
-    text-decoration: @teal underline;
 }
 
 #workspaces button.urgent {
@@ -75,14 +65,27 @@ tooltip {
 #backlight,
 #battery,
 #bluetooth,
+#network,
 #cpu,
 #tray,
 #pulseaudio,
 #memory,
-#disk {
-    padding: 0px 7.5px;
+#disk,
+#idle_inhibitor {
+    padding: 0px 12px;
+    background-image: linear-gradient(to bottom, transparent 35%, rgba(203, 166, 247, 0.3) 35%, rgba(203, 166, 247, 0.3) 65%, transparent 65%);
+    background-size: 1px 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
 }
 
+#idle_inhibitor {
+    padding-right: 20px;
+}
+
+#network.disconnected {
+    color: @red;
+}
 
 #bluetooth.disabled {
     color: @peach;
@@ -93,23 +96,23 @@ tooltip {
 }
 
 #bluetooth.connected {
-    color: @green;
+    color: @pink;
 }
 
 #custom-music {
-    background-color: @mantle;
-    border: 2px solid @lavender;
-    border-radius: 12.5px;
-    margin-left: 5px;
-    padding: 0px 7.5px;
+    margin-left: 0px;
+    padding: 0px 12px;
+    background-image: linear-gradient(to bottom, transparent 35%, rgba(203, 166, 247, 0.3) 35%, rgba(203, 166, 247, 0.3) 65%, transparent 65%), linear-gradient(to bottom, transparent 35%, rgba(203, 166, 247, 0.3) 35%, rgba(203, 166, 247, 0.3) 65%, transparent 65%);
+    background-size: 1px 100%, 1px 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left center, right center;
 }
 
 #custom-music.empty {
     padding-right: 12.5px;
 }
 
-#custom-music.unknown {
-}
+#custom-music.unknown {}
 
 #custom-music.normal {
     color: @green;

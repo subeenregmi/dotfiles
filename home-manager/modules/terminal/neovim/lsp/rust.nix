@@ -1,5 +1,5 @@
 let 
-  unstable = import <nixos-unstable> {};
+  unstable = import <nixpkgs-unstable> {};
 in
 {
   programs.nixvim.plugins = {

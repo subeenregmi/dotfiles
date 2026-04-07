@@ -1,5 +1,5 @@
 # SUBEEN REGMI CONFIGURATION.NIX
-# subeenregmi.com @ 2025
+# subeenregmi.com @ 2026
 
 { config, pkgs, lib, ... }:
 
@@ -191,6 +191,7 @@
     steam-run
     ncdu
     intel-gpu-tools
+    gnumake
   ];
 
   programs.vim.enable = true;
