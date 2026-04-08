@@ -5,12 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-
   outputs = { self, nixpkgs }: 
     let
-      pkgs = import nixpkgs {};
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in {
-      packages.x86_64-linux.hello = pkgs.callPackage ./tablecruncher/build.nix {};
-      packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+      packages.x86_64-linux.default = pkgs.callPackage ./build.nix {};
     };
 }
