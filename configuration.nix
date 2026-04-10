@@ -8,6 +8,7 @@
     # Include the results of the hardware scan.
     <nixos-hardware/lenovo/thinkpad/t480>
     ./hardware-configuration.nix
+    ./wifi/eduroam.nix
   ];
 
   # Bootloader
