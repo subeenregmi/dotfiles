@@ -16,6 +16,7 @@
         dunstify "failed screenshot :("; 
       fi
       '';
+      claude-sp="CLAUDE_CONFIG_DIR=~/.claude-sp claude";
     };
 plugins = with pkgs; [
       {

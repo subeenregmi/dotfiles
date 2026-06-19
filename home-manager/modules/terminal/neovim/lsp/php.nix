@@ -3,9 +3,8 @@
   programs.nixvim.plugins = {
     lsp = {
       servers = {
-        intelephense = {
+        phpactor = {
           enable = true;
-          package = pkgs.intelephense;
         };
       };
     };

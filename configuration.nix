@@ -193,6 +193,10 @@
     ncdu
     intel-gpu-tools
     gnumake
+    iw
+    linux-wifi-hotspot
+    dig
+    wireguard-tools
   ];
 
   programs.vim.enable = true;
